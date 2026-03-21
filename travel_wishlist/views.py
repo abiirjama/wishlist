@@ -39,7 +39,13 @@ def place_was_visited(request, place_pk):
         place.visited = True 
         place.save()
     
-    return redirect('place_list')
+    # return redirect('places_visited') # redirect to places visited
+    return redirect('place_list') # redirect to wishlist places
+
+def about(request):
+    author='Abir'
+    about='A website to create a list of places to visit'
+    return render(request, 'travel_wishlist/about.html',{'uthor': author, 'about': about})
 
 
     
